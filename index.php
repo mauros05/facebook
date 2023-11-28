@@ -4,7 +4,7 @@
     $userController = new userController;
 
     $method = $_SERVER["REQUEST_METHOD"];
-
+    
     if($method == "GET"){
         if(isset($_GET["ac"])){
             switch($_GET["ac"]){
@@ -18,6 +18,10 @@
         } else {
             $userController->index();
         }
+    } else {
+        if(isset($_POST["create_new_user"])) {
+            $userController->create($_POST);
+        } 
     }
 
 ?>

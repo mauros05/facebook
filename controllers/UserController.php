@@ -36,8 +36,9 @@
             require_once "views/Templates/Footer.php";
         }
 
-        public function create(){
-
+        public function create($data){
+            $this->UserModel->create($data);
+            header('Location: index.php');
         }
 
         public function edit(){

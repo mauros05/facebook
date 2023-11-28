@@ -56,8 +56,27 @@
             }
         }
 
-        public function create(){
+        public function create($data){
+            $query = "INSERT INTO users(first_name, middle_name, last_name, email, password, user_name)
+                            VALUES('".$data["first_name"]."',
+                                   '".$data["middle_name"]."',
+                                   '".$data["last_name"]."',
+                                   '".$data["email"]."',
+                                   '".$data["password"]."',
+                                   '".$data["user_name"]."')";
+            
 
+            $queryRes = mysqli_query($this->db, $query);
+
+            if(!$queryRes){
+                $res["flag"] = 0;
+                $res["res_message"] = "Hubo un error al guardar el apartamento";
+                return $res;
+            }else {
+                $res["flag"] = 1;
+                $res["res_message"] = "Guardado Exitoso";
+                return $res;
+            }
         }
 
         public function edit(){
