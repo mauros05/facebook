@@ -14,6 +14,8 @@
                 case 'c':
                     $userController->new();
                     break;
+                case 'e':
+                    $userController->edit($_GET["idu"]);
             }
         } else {
             $userController->index();
@@ -21,7 +23,9 @@
     } else {
         if(isset($_POST["create_new_user"])) {
             $userController->create($_POST);
-        } 
+        } elseif(isset($_POST["edit_user"])) {
+            $userController->update($_POST);
+        }
     }
 
 ?>

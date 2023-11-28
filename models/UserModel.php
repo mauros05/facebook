@@ -41,6 +41,7 @@
 
             if(mysqli_num_rows($queryRes) > 0){
                 while($rows = mysqli_fetch_assoc($queryRes)){
+                    $data["id_user"]     = $rows["id_user"];
                     $data["first_name"]  = $rows["first_name"];
                     $data["middle_name"] = $rows["middle_name"];
                     $data["last_name"]   = $rows["last_name"];
@@ -79,12 +80,35 @@
             }
         }
 
-        public function edit(){
+        public function edit($id){
+            $query = "SELECT * 
+                    FROM users 
+                    WHERE id_user =".$id;
             
+            $queryRes = mysqli_query($this->db, $query);
+
+            if(mysqli_num_rows($queryRes) > 0){
+                while($rows = mysqli_fetch_assoc($queryRes)){
+                    $data["id_user"]     = $rows["id_user"];
+                    $data["first_name"]  = $rows["first_name"];
+                    $data["middle_name"] = $rows["middle_name"];
+                    $data["last_name"]   = $rows["last_name"];
+                    $data["email"]       = $rows["email"];
+                    $data["password"]    = $rows["password"];
+                    $data["username"]    = $rows["user_name"];
+                    $data["full_name"]   = $rows["first_name"]." ".$rows["middle_name"]." ".$rows["last_name"];
+                }
+
+                return $data;
+            } else {
+                return "Usuario no encontrado";
+            }
         }
 
-        public function update(){
-
+        public function update($data){
+            var_dump($data);
+            exit;
+            $queryVerificar = "SELECT * FROM users WHERE id_user =".$data["id_user"];
         }
 
         public function delete(){

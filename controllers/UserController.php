@@ -38,15 +38,23 @@
 
         public function create($data){
             $this->UserModel->create($data);
+            
             header('Location: index.php');
         }
 
-        public function edit(){
-            
+        public function edit($id){
+            $data["Title"] = "Edit User";
+
+            $res = $this->UserModel->edit($id);
+
+            require_once "views/Templates/Header.php";
+            require_once "views/Components/Navbar.php";
+            require_once "views/UserViews/edit.php";
+            require_once "views/Templates/Footer.php";
         }
 
-        public function update(){
-
+        public function update($data){
+            $this->UserModel->update($data);
         }
 
         public function delete(){
