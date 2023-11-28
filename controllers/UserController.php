@@ -15,5 +15,16 @@
             require_once "views/UserViews/index.php";
             require_once "views/Templates/Footer.php";
         }
+
+        public function show($id) {
+            $data["Title"] = "";
+
+            $res = $this->UserModel->show($id);
+
+            require_once "views/Templates/Header.php";
+            require_once "views/Components/Navbar.php";
+            require_once "views/UserViews/show.php";
+            require_once "views/Templates/Footer.php";
+        }
     }
 ?>

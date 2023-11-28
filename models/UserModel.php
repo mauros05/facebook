@@ -31,6 +31,31 @@
                 return "No se encontraron usuarios registrados";
             }
         }
+
+        public function show($id){
+            $query = "SELECT * 
+                    FROM users 
+                    WHERE id_user =".$id;
+            
+            $queryRes = mysqli_query($this->db, $query);
+
+            if(mysqli_num_rows($queryRes) > 0){
+                $i = 0;
+                while($rows = mysqli_fetch_assoc($queryRes)){
+                    $data["first_name"][$i]  = $rows["first_name"];
+                    $data["middle_name"][$i] = $rows["middle_name"];
+                    $data["last_name"][$i]   = $rows["last_name"];
+                    $data["email"][$i]       = $rows["email"];
+                    $data["password"][$i]    = $rows["password"];
+                    $data["username"][$i]    = $rows["user_name"];
+                    $i++;
+                }
+
+                return $data;
+            } else {
+                return "Usuario no encontrado";
+            }
+        }
     }
 
 ?>

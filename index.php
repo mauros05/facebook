@@ -6,7 +6,15 @@
     $method = $_SERVER["REQUEST_METHOD"];
 
     if($method == "GET"){
-        $userController->index();
+        if(isset($_GET["ac"])){
+            switch($_GET["ac"]){
+                case 's':
+                    $userController->show($_GET["idu"]);
+                    break;
+            }
+        } else {
+            $userController->index();
+        }
     }
 
 ?>
