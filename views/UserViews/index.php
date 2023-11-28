@@ -1,4 +1,7 @@
 <div class="p-2">
+    <div>
+        <a href="index.php?ac=c" class="btn btn-danger">Add new User</a>
+    </div>
     <table class="table">
     <thead>
         <tr>

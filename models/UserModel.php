@@ -56,11 +56,6 @@
             }
         }
 
-
-        public function new(){
-
-        }
-
         public function create(){
 
         }

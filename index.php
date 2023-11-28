@@ -11,6 +11,9 @@
                 case 's':
                     $userController->show($_GET["idu"]);
                     break;
+                case 'c':
+                    $userController->new();
+                    break;
             }
         } else {
             $userController->index();

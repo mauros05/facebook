@@ -28,7 +28,12 @@
         }
 
         public function new(){
-
+            $data["Title"] = "Create New User";
+            
+            require_once "views/Templates/Header.php";
+            require_once "views/Components/Navbar.php";
+            require_once "views/UserViews/new.php";
+            require_once "views/Templates/Footer.php";
         }
 
         public function create(){
