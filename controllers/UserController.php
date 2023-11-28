@@ -17,14 +17,34 @@
         }
 
         public function show($id) {
-            $data["Title"] = "";
-
+            
             $res = $this->UserModel->show($id);
-
+            
+            $data["Title"] = $res["full_name"];
             require_once "views/Templates/Header.php";
             require_once "views/Components/Navbar.php";
             require_once "views/UserViews/show.php";
             require_once "views/Templates/Footer.php";
+        }
+
+        public function new(){
+
+        }
+
+        public function create(){
+
+        }
+
+        public function edit(){
+            
+        }
+
+        public function update(){
+
+        }
+
+        public function delete(){
+
         }
     }
 ?>
