@@ -61,8 +61,10 @@
             }
         }
 
-        public function delete(){
+        public function delete($id){
+            $res = $this->UserModel->delete($id);
 
+            header('Location: index.php');
         }
     }
 ?>

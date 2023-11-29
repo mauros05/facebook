@@ -21,8 +21,8 @@
             <td><?= $res["first_name"][$i] ?></td>
             <td><?= $res["middle_name"][$i] ?> <?= $res["last_name"][$i] ?></td>
             <td><?= $res["email"][$i] ?></td>
-            <td><a href="index.php?ac=s&idu=<?= $res["id_user"][$i] ?>">Show</a></td>
-            <td><a href=""></a></td>
+            <td><a href="index.php?ac=s&idu=<?= $res["id_user"][$i] ?>"  class="btn btn-success">Show</a></td>
+            <td><a href="index.php?ac=de&idu=<?= $res["id_user"][$i] ?>" class="btn btn-danger">Delete</a></td>
             <td></td>
             </tr>
         <?php }?>

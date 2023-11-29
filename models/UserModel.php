@@ -9,7 +9,7 @@
 
         public function index(){
             $query = "SELECT *
-                    FROM users";
+                    FROM users WHERE status = 1";
 
             $queryRes = mysqli_query($this->db, $query);
 
@@ -119,13 +119,13 @@
             $resQueryVerificar = mysqli_query($this->db, $queryVerificar);
 
             if(mysqli_num_rows($resQueryVerificar) == 0){
-                $queryUpdate = "UPDATE users SET first_name ='".$data["first_name"]."',
+                $queryUpdate = "UPDATE users SET first_name  ='".$data["first_name"]."',
                                                  middle_name ='".$data["middle_name"]."',
-                                                 last_name = '".$data["last_name"]."',
-                                                 email = '".$data["email"]."',
-                                                 password = '".$data["password"]."',
-                                                 user_name ='".$data["username"]."'
-                                                 WHERE id_user=".$data["id_user"];
+                                                 last_name   = '".$data["last_name"]."',
+                                                 email       = '".$data["email"]."',
+                                                 password    = '".$data["password"]."',
+                                                 user_name   ='".$data["username"]."'
+                                                 WHERE id_user =".$data["id_user"];
                 
                 $resEdit = mysqli_query($this->db, $queryUpdate);
 
@@ -141,8 +141,16 @@
             }
         }
 
-        public function delete(){
+        public function delete($id){
+            $query = "UPDATE users SET status = 0 WHERE id_user =".$id;
             
+            $resQuery = mysqli_query($this->db, $query);
+
+            if(!$resQuery){
+                return "Hubo un error al borrar al Usuario";
+            } else {
+                return "Usuario borrado exitosamente";
+            }
         }
     }
 

@@ -16,6 +16,10 @@
                     break;
                 case 'e':
                     $userController->edit($_GET["idu"]);
+                    break;
+                case 'de':
+                    $userController->delete($_GET['idu']);
+                    break;
             }
         } else {
             $userController->index();
