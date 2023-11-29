@@ -54,7 +54,11 @@
         }
 
         public function update($data){
-            $this->UserModel->update($data);
+            $res = $this->UserModel->update($data);    
+
+            if(isset($res["id_user"])){
+                header('Location: index.php?ac=s&idu='.$res["id_user"]);
+            }
         }
 
         public function delete(){

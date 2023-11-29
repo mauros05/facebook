@@ -22,7 +22,7 @@
       </div>
       <div class="form-group">
         <label for="exampleInputEmail">User Name</label>
-        <input type="text" name="user_name" class="form-control" value="<?= isset($res["username"])? $res["username"] : "" ?>">
+        <input type="text" name="username" class="form-control" value="<?= isset($res["username"])? $res["username"] : "" ?>">
       </div>
 
       <input type="text" name="id_user" value="<?= $res["id_user"] ?>" hidden>

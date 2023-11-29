@@ -106,9 +106,39 @@
         }
 
         public function update($data){
-            var_dump($data);
-            exit;
-            $queryVerificar = "SELECT * FROM users WHERE id_user =".$data["id_user"];
+            $queryVerificar = "SELECT * 
+                             FROM users 
+                             WHERE id_user ='".$data["id_user"]."'
+                             AND first_name = '".$data["first_name"]."'
+                             AND middle_name ='".$data["middle_name"]."'
+                             AND last_name ='".$data["last_name"]."'
+                             AND email ='".$data["email"]."'
+                             AND password ='".$data["password"]."'
+                             AND user_name ='".$data["username"]."'";
+
+            $resQueryVerificar = mysqli_query($this->db, $queryVerificar);
+
+            if(mysqli_num_rows($resQueryVerificar) == 0){
+                $queryUpdate = "UPDATE users SET first_name ='".$data["first_name"]."',
+                                                 middle_name ='".$data["middle_name"]."',
+                                                 last_name = '".$data["last_name"]."',
+                                                 email = '".$data["email"]."',
+                                                 password = '".$data["password"]."',
+                                                 user_name ='".$data["username"]."'
+                                                 WHERE id_user=".$data["id_user"];
+                
+                $resEdit = mysqli_query($this->db, $queryUpdate);
+
+                if(!$resEdit){
+                    return "No se ha podido editar al usuario";
+                } else {
+                    $res["message"] = "El usuario ha sido editado exitosamente";
+                    $res["id_user"] = $data["id_user"];
+                    return $res;
+                }   
+            } else {
+                return "El usario ya existe";
+            }
         }
 
         public function delete(){
