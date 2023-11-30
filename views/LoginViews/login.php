@@ -8,14 +8,16 @@
         <form>
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <input type="email" id="form1Example13" class="form-control form-control-lg" />
-            <label class="form-label" for="form1Example13">Email address</label>
+            <div id="email-error" style="color: red" hidden></div>
+            <input type="email" id="email" class="form-control form-control-lg" />
+            <label class="form-label" for="email">Email address</label>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-4">
-            <input type="password" id="form1Example23" class="form-control form-control-lg" />
-            <label class="form-label" for="form1Example23">Password</label>
+            <div id="pass-error" style="color: red" hidden></div>
+            <input type="password" id="pass" class="form-control form-control-lg" />
+            <label class="form-label" for="pass">Password</label>
           </div>
 
           <div class="d-flex justify-content-around align-items-center mb-4">
@@ -26,10 +28,9 @@
             </div>
             <a href="#!">Forgot password?</a>
           </div>
-
-          <!-- Submit button -->
-          <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
         </form>
+        <!-- Submit button -->
+        <button class="btn btn-primary btn-lg btn-block" id="login">Login</button>
       </div>
     </div>
   </div>

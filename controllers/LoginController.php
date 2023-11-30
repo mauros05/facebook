@@ -6,7 +6,8 @@
         }
 
         public function loginView(){
-            $data["Title"] = "Login";
+            $data["Title"]      = "Login";
+            $data["jqueryURL"]  = "assets/js/login.js";
 
             require_once("views/Templates/Header.php");
             require_once("views/LoginViews/login.php");
