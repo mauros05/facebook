@@ -7,9 +7,25 @@ class LoginModel {
         $this->db  = $dbConnect->connect(); 
     }
 
+    public function validateLogin($data){
+        $query = "SELECT * 
+                  FROM users 
+                  WHERE email='".$data["emailOrusername"]."' 
+                  AND password='".$data["password"]."'";
 
-    public function validarLogin(){
-        
+        $resQuery = mysqli_query($this->db, $query);
+
+        if(mysqli_num_rows($resQuery) > 0){
+            while($rows = mysqli_fetch_assoc($resQuery)){
+                $res["id_user"] = $rows["id_user"];
+            }
+
+            return $res;
+        } else {
+            $res["error_message"] = "El correo/usuario o la contraseña no son correctos";
+
+            return $res;
+        }
     }
 }
 

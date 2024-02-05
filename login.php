@@ -12,6 +12,10 @@
         } else {
             $LoginController->loginView();
         }
+    } else {
+        if(isset($_POST["emailOrusername"])){
+            $LoginController->validateLogin($_POST);
+        }
     }
 
 

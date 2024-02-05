@@ -9,7 +9,7 @@
           <!-- Email input -->
           <div class="form-outline mb-4">
             <div id="email-error" style="color: red" hidden></div>
-            <input type="email" id="email" class="form-control form-control-lg" />
+            <input type="email" id="email-username" class="form-control form-control-lg" />
             <label class="form-label" for="email">Email address</label>
           </div>
 
@@ -29,6 +29,8 @@
             <a href="#!">Forgot password?</a>
           </div>
         </form>
+         
+        <div class="alert alert-danger" role="alert" id="warning-alert" hidden></div>
         <!-- Submit button -->
         <button class="btn btn-primary btn-lg btn-block" id="login">Login</button>
       </div>
