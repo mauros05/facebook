@@ -31,7 +31,7 @@ $(document).ready(function(){
             let res = ajaxPetition(obj);
 
             if(res.flag == 1){
-                window.location = "index.php";
+                window.location = "post.php?ac=list";
             } else {
                 $("#warning-alert").html(res.error_message);
                 $("#warning-alert").removeAttr("hidden");
