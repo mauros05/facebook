@@ -16,7 +16,9 @@
             echo "NOT FOUND 404";
         }
     } else {
-
+        if(isset($_POST[""])){
+            
+        }
     }
 
 

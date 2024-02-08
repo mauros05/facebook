@@ -7,6 +7,8 @@
 
         public function listPosts(){
             $data["jqueryURL"] = "assets/js/post.js";
+
+            require_once("config/Config.php");
             require_once("views/Templates/Header.php");
             require_once("views/Components/Navbar.php");
             require_once("views/PostViews/index.php");
