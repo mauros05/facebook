@@ -1,11 +1,13 @@
 <div>
-    <form action="">
-        <div>
-            <input type="text" id="post-text" class="form-control form-control-lg" />
-            <label class="form-label" for="email">Writte your post</label>
-        </div>
-    </form>
-    <button id="publish-post" class="btn btn-danger">Post</button>
+    <div id="post-form" hidden>
+        <form action="">
+            <div>
+                <input type="text" id="post-text" class="form-control form-control-lg" />
+                <label class="form-label" for="email">Writte your post</label>
+            </div>
+            <button id="publish-post" class="btn btn-danger">Post</button>
+        </form>
+    </div>
     <button id="new-post">New Post</button>
     <div class="card w-75 mb-3">
         <div class="card-body">
