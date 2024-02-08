@@ -10,10 +10,10 @@
 
             $res = $this->UserModel->index();
 
-            require_once "views/Templates/Header.php";
-            require_once "views/Components/Navbar.php";
-            require_once "views/UserViews/index.php";
-            require_once "views/Templates/Footer.php";
+            require_once("views/Templates/Header.php");
+            require_once("views/Components/Navbar.php");
+            require_once("views/UserViews/index.php");
+            require_once ("views/Templates/Footer.php");
         }
 
         public function show($id) {
