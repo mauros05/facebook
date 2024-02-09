@@ -1,18 +1,20 @@
 <div>
     <div id="post-form" hidden>
-        <form action="">
+        <form action="" method="" enctype="multipart/form-data" id="create-post">
             <div>
-                <input type="text" id="post-text" class="form-control form-control-lg" />
                 <label class="form-label" for="post-text">Writte your post</label>
+                <input type="text" id="post-text" class="form-control form-control-lg" />
             </div>
 
             <input type="number" id="user_id" value="<?= $_SESSION["id_user"] ?>" hidden>
+            <input type="text" id="create" value="create" hidden>
+
+            <button type="button" id="publish-post" class="btn btn-danger">Post</button>
         </form>
-        <button id="publish-post" class="btn btn-danger">Post</button>
     </div>
 
     <button id="new-post">New Post</button>
-    
+
     <div class="card w-75 mb-3">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
