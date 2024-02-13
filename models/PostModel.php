@@ -11,8 +11,25 @@ class PostModel{
 
     }
 
-    public function createPost(){
+    public function createPost($data){
+        $query = "INSERT INTO posts(user_id, text) 
+                        VALUES('".$data["id_user"]."',
+                               '".$data["post_text"]."')";
 
+        var_dump($query);
+        exit;
+
+        $queryRes = mysqli_query($this->db, $query);
+
+        if(!$queryRes){
+            $res["flag"] = 0;
+            $res["res_message"] = "Hubo un error al ejecutar la accion";
+            return $res;
+        } else {
+            $res["flag"] = 1;
+            $res["res_message"] = "El post se guardo correctamente";
+            return $res;
+        }
     }
 
     public function editPost(){

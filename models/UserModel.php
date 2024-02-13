@@ -71,7 +71,7 @@
 
             if(!$queryRes){
                 $res["flag"] = 0;
-                $res["res_message"] = "Hubo un error al guardar el apartamento";
+                $res["res_message"] = "Hubo un error al guardar el usuario";
                 return $res;
             }else {
                 $res["flag"] = 1;

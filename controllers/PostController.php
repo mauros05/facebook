@@ -15,8 +15,10 @@
             require_once("views/Templates/Footer.php");
         }
 
-        public function createPost(){
-            
+        public function createPost($data){
+            $res = $this->postModel->createPost($data);
+
+            // echo json_encode($res);
         }
     
         public function editPost(){

@@ -16,8 +16,13 @@
             echo "NOT FOUND 404";
         }
     } else {
-        if(isset($_POST[""])){
-            
+        if(isset($_POST["action"])){
+            switch($_POST["action"]){
+                case 'create':
+                    $postController->createPost($_POST);
+                    break;
+            }
+
         }
     }
 
