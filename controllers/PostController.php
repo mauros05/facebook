@@ -8,6 +8,8 @@
         public function listPosts(){
             $data["jqueryURL"] = "assets/js/post.js";
 
+            $res = $this->postModel->listPosts();
+
             require_once("config/Config.php");
             require_once("views/Templates/Header.php");
             require_once("views/Components/Navbar.php");
@@ -18,7 +20,7 @@
         public function createPost($data){
             $res = $this->postModel->createPost($data);
 
-            // echo json_encode($res);
+            echo json_encode($res);
         }
     
         public function editPost(){

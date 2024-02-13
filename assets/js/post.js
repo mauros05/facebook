@@ -8,7 +8,8 @@ $(document).ready(function(){
         event.preventDefault;
 
         if($("#post-text").val() == ""){
-
+            $("#modal-message").html("La publiciacion debe de tener contenido");
+            $("#staticBackdrop").modal("show");
         } else {
             let data = $("#create-post").serialize();
             obj.data = data;
@@ -18,14 +19,13 @@ $(document).ready(function(){
             let res = ajaxPetition(obj);
 
             if(res.flag == 1){
-                window.location = "post.php?ac=list";
+                setTimeout(function(){
+                    window.location = "post.php?ac=list";
+                }, 3000)
             } else {
-                $("#staticBackdrop").modal("show")
+                $("#staticBackdrop").modal("show");
             }
         }
-
-
-
     })
 
 })
