@@ -7,6 +7,8 @@
 
         public function listPosts(){
             $data["jqueryURL"] = "assets/js/post.js";
+            $data["css_url"]   = "assets/css/post.css";
+            $data["Title"]     = "Facebook";
 
             $res = $this->postModel->listPosts();
 

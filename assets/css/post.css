@@ -1,0 +1,10 @@
+body {
+    background-color: rgb(238, 241, 241);
+}
+
+#posts-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
