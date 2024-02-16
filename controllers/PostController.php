@@ -26,6 +26,12 @@
         }
     
         public function editPost($id){
+            $data["jqueryURL"] = "assets/js/post.js";
+            $data["css_url"]   = "assets/css/post.css";
+            $data["Title"]     = "Edit Post";
+
+            $res = $this ->postModel->editPost($id);
+
             require_once("config/Config.php");
             require_once("views/Templates/Header.php");
             require_once("views/Components/Navbar.php");

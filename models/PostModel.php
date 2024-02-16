@@ -59,7 +59,22 @@ class PostModel{
     }
 
     public function editPost($id){
+        $query = "SELECT * 
+                  FROM posts 
+                  WHERE post_id =".$id;
 
+        $queryRes = mysqli_query($this->db, $query);
+
+        if(mysqli_num_rows($queryRes) > 0){
+           while($rows = mysqli_fetch_assoc($queryRes)){
+                $data["post_id"] = $rows["post_id"];
+                $data["user_id"] = $rows["user_id"]; 
+                $data["text"]    = $rows["text"]; 
+           } 
+           return $data;
+        } else {
+            return $data["error_msg"] = "No se ha encontrado ninguna publicacion";
+        }
     }
 
     public function deletePost(){

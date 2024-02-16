@@ -28,5 +28,7 @@ $(document).ready(function(){
         }
     })
     
-
+    $("#edit-post").click(function(event){
+        
+    })
 })
