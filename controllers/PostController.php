@@ -25,8 +25,12 @@
             echo json_encode($res);
         }
     
-        public function editPost(){
-    
+        public function editPost($id){
+            require_once("config/Config.php");
+            require_once("views/Templates/Header.php");
+            require_once("views/Components/Navbar.php");
+            require_once("views/PostViews/edit.php");
+            require_once("views/Templates/Footer.php");
         }
     
         public function deletePost(){

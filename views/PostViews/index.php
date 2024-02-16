@@ -23,9 +23,9 @@
         <?php for($i = 0; $i < count($res["id_user"]); $i++){ ?>
             <div class="card w-75 mb-3">
                 <div class="card-body">
-                    <h5 class="card-title"><?= $res["user_name"][$i] ?></h5>
-                    <p class="card-text"><?= $res["post_text"][$i] ?></p>
-                    <a href="#" class="btn btn-primary">Button</a>
+                  <h5 class="card-title"><?= $res["user_name"][$i] ?></h5>
+                  <p class="card-text"><?= $res["post_text"][$i] ?></p>
+                  <a href="post.php?ac=edit&post_id=<?= $res["id_post"][$i] ?>" class="btn btn-primary">Edit Post</a>
                 </div>
             </div>
         <?php } ?>

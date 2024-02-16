@@ -11,6 +11,9 @@
                 case 'list':
                     $postController->listPosts();
                     break;
+                case 'edit':
+                    $postController->editPost($_GET["post_id"]);
+                    break;
             }
         } else{
             echo "NOT FOUND 404";

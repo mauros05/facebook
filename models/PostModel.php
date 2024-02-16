@@ -10,12 +10,13 @@ class PostModel{
     public function listPosts(){
         $query = "SELECT p.user_id,
                          p.text,
+                         p.post_id,
                          u.user_name 
                   FROM posts p 
                   INNER JOIN users u 
                   ON u.id_user = p.user_id
                   WHERE p.status = 1
-                  ORDER BY post_id DESC";
+                  ORDER BY p.post_id DESC";
 
         $queryRes = mysqli_query($this->db, $query);
 
@@ -25,6 +26,7 @@ class PostModel{
             if(mysqli_num_rows($queryRes) > 0){
                 $i = 0;
                 while($rows = mysqli_fetch_assoc($queryRes)){
+                    $data["id_post"][$i]   = $rows["post_id"];
                     $data["id_user"][$i]   = $rows["user_id"];
                     $data["post_text"][$i] = $rows["text"];
                     $data["user_name"][$i] = $rows["user_name"];
@@ -56,7 +58,7 @@ class PostModel{
         }
     }
 
-    public function editPost(){
+    public function editPost($id){
 
     }
 
