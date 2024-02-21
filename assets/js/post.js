@@ -28,7 +28,21 @@ $(document).ready(function(){
         }
     })
     
-    $("#edit-post").click(function(event){
-        
+    $("#edit-post-button").click(function(event){
+        event.preventDefault;
+
+        if($("#floatingTextareaEdit").val() == ""){
+            $("#modal-message").html("La publiciacion debe de tener contenido");
+            $("#staticBackdrop").modal("show");
+        } else {
+            let data = $("#edit-post").serialize();
+            obj.data = data;
+            obj.url  = "post.php";
+            obj.type = "POST";
+
+            let res = ajaxPetition(obj);
+
+            
+        }
     })
 })

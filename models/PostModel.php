@@ -77,6 +77,33 @@ class PostModel{
         }
     }
 
+    public function updatePost($data){
+        $querySearch = "SELECT * 
+                  FROM posts 
+                  WHERE post_id=".$data["id_post"]."
+                  AND user_id=".$data["id_user"];
+
+        $resQuerySearch = mysqli_query($this->db, $querySearch);
+
+        if(mysqli_num_rows($resQuerySearch) == 1){
+            $queryUpdate = "UPDATE posts SET text=".$data["post_text"];
+
+            $resQueryUpdate = mysqli_query($this->db, $queryUpdate);
+
+            if(!$resQueryUpdate){
+                $res["flag"] = 0;
+                $res["res_message"] = "No se ha podido actualizar el post";
+                return $res;
+            } else {
+                $res["flag"] = 1;
+                $res["res_message"] = "El post se actualizo correctamente";
+                return $res;
+            }
+        } else {
+            
+        }
+    }
+
     public function deletePost(){
         
     }

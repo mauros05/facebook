@@ -38,6 +38,10 @@
             require_once("views/PostViews/edit.php");
             require_once("views/Templates/Footer.php");
         }
+
+        public function updatePost($data){
+            $res = $this->postModel->updatePost($data);
+        }
     
         public function deletePost(){
             
