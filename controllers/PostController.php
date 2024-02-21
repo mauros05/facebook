@@ -41,6 +41,8 @@
 
         public function updatePost($data){
             $res = $this->postModel->updatePost($data);
+
+            echo json_encode($res);
         }
     
         public function deletePost(){

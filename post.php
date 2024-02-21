@@ -24,7 +24,7 @@
                 case 'create':
                     $postController->createPost($_POST);
                     break;
-                case 'edit':
+                case 'update':
                     $postController->updatePost($_POST);
                     break;
             }

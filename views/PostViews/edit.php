@@ -2,14 +2,14 @@
     <form action="" method="" enctype="multipart/form-data" id="edit-post">
         <div>
             <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextareaEdit" style="height: 100px" name="post_text"><?= $res["text"] ?></textarea>
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextareaEdit" style="height: 100px" name="text"><?= $res["text"] ?></textarea>
                 <label for="floatingTextareaEdit">Comments</label>
             </div>
         </div>
     
-        <input type="number" id="user-id" value="<?= $res["user_id"]?>" name="id_user" hidden>
-        <input type="number" id="post-id" value="<?= $res["post_id"]?>" name="id_post" hidden>
-        <input type="text" id="create" value="edit" name="action" hidden>
+        <input type="number" id="user-id" value="<?= $res["user_id"]?>" name="user_id" hidden>
+        <input type="number" id="post-id" value="<?= $res["post_id"]?>" name="post_id" hidden>
+        <input type="text" id="create" value="update" name="action" hidden>
     
         <button type="button" id="edit-post-button" class="btn btn-danger">Save Post</button>
     </form>

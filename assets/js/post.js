@@ -42,7 +42,13 @@ $(document).ready(function(){
 
             let res = ajaxPetition(obj);
 
-            
+            if(res.flag == 1){
+                setTimeout(function(){
+                    window.location = "post.php?ac=list";
+                }, 1500)
+            } else {
+                $("#staticBackdrop").modal("show");
+            }
         }
     })
 })

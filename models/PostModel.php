@@ -26,10 +26,10 @@ class PostModel{
             if(mysqli_num_rows($queryRes) > 0){
                 $i = 0;
                 while($rows = mysqli_fetch_assoc($queryRes)){
-                    $data["id_post"][$i]   = $rows["post_id"];
-                    $data["id_user"][$i]   = $rows["user_id"];
-                    $data["post_text"][$i] = $rows["text"];
+                    $data["post_id"][$i]   = $rows["post_id"];
+                    $data["user_id"][$i]   = $rows["user_id"];
                     $data["user_name"][$i] = $rows["user_name"];
+                    $data["text"][$i]      = $rows["text"];
                     $i++;
                 }
 
@@ -42,8 +42,8 @@ class PostModel{
 
     public function createPost($data){
         $query = "INSERT INTO posts(user_id, text) 
-                        VALUES('".$data["id_user"]."',
-                               '".$data["post_text"]."')";
+                        VALUES('".$data["user_id"]."',
+                               '".$data["text"]."')";
 
         $queryRes = mysqli_query($this->db, $query);
 
@@ -79,14 +79,16 @@ class PostModel{
 
     public function updatePost($data){
         $querySearch = "SELECT * 
-                  FROM posts 
-                  WHERE post_id=".$data["id_post"]."
-                  AND user_id=".$data["id_user"];
+                        FROM posts 
+                        WHERE post_id=".$data["post_id"]."
+                        AND user_id=".$data["user_id"];
 
         $resQuerySearch = mysqli_query($this->db, $querySearch);
 
         if(mysqli_num_rows($resQuerySearch) == 1){
-            $queryUpdate = "UPDATE posts SET text=".$data["post_text"];
+            $queryUpdate = "UPDATE posts SET text ='".$data["text"]."' 
+                                    WHERE post_id=".$data["post_id"]."
+                                    AND user_id=".$data["user_id"];
 
             $resQueryUpdate = mysqli_query($this->db, $queryUpdate);
 
@@ -100,7 +102,9 @@ class PostModel{
                 return $res;
             }
         } else {
-            
+            $res["flag"] = 0;
+            $res["res_message"] = "No se ha encontrado el post que desea editar";
+            return $res;
         }
     }
 
