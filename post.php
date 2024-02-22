@@ -27,8 +27,10 @@
                 case 'update':
                     $postController->updatePost($_POST);
                     break;
+                case 'delete':
+                    $postController->deletePost($_POST);
+                    break;
             }
-
         }
     }
 

@@ -45,8 +45,10 @@
             echo json_encode($res);
         }
     
-        public function deletePost(){
-            
+        public function deletePost($data){
+            $res = $this->postModel->deletePost($data);
+
+            echo json_encode($res);
         }
     }
 ?>

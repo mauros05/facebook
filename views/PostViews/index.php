@@ -26,6 +26,9 @@
               <h5 class="card-title"><?= $res["user_name"][$i] ?></h5>
               <p class="card-text"><?= $res["text"][$i] ?></p>
               <a href="post.php?ac=edit&post_id=<?= $res["post_id"][$i] ?>" class="btn btn-primary">Edit Post</a>
+              <button class="btn btn-danger delete-post-button" data-id="<?= $res["post_id"][$i] ?>">Delte Post</button>
+              
+              <input type="number" id="post-<?= $res["post_id"][$i] ?>" value="<?= $res["post_id"][$i]?>" hidden>
             </div>
         </div>
     <?php } ?>
@@ -37,9 +40,8 @@
         <div class="modal-header">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body" id="modal-message">
-          
-        </div>
+        <div class="modal-body" id="modal-message"></div>
+        <div id="modal-button"></div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
