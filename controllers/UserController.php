@@ -39,7 +39,7 @@
         public function create($data){
             $this->UserModel->create($data);
             
-            header('Location: index.php');
+            header('Location: user.php');
         }
 
         public function edit($id){
@@ -57,14 +57,14 @@
             $res = $this->UserModel->update($data);    
 
             if(isset($res["id_user"])){
-                header('Location: index.php?ac=s&idu='.$res["id_user"]);
+                header('Location: user.php?ac=s&idu='.$res["id_user"]);
             }
         }
 
         public function delete($id){
             $res = $this->UserModel->delete($id);
 
-            header('Location: index.php');
+            header('Location: user.php');
         }
     }
 ?>

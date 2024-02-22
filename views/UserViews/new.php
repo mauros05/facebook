@@ -1,5 +1,5 @@
 <div class="p-2">
-    <form action="index.php" method="post">
+    <form action="user.php" method="post">
     <div class="form-group">
         <label for="exampleInputFirsName">First Name</label>
         <input type="text" name="first_name" class="form-control" placeholder="Jon Doe">

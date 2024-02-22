@@ -1,6 +1,6 @@
 <div class="p-2">
     <div>
-        <a href="index.php?ac=c" class="btn btn-danger">Add new User</a>
+        <a href="user.php?ac=c" class="btn btn-danger">Add new User</a>
     </div>
     <table class="table">
     <thead>
@@ -21,8 +21,8 @@
             <td><?= $res["first_name"][$i] ?></td>
             <td><?= $res["middle_name"][$i] ?> <?= $res["last_name"][$i] ?></td>
             <td><?= $res["email"][$i] ?></td>
-            <td><a href="index.php?ac=s&idu=<?= $res["id_user"][$i] ?>"  class="btn btn-success">Show</a></td>
-            <td><a href="index.php?ac=de&idu=<?= $res["id_user"][$i] ?>" class="btn btn-danger">Delete</a></td>
+            <td><a href="user.php?ac=s&idu=<?= $res["id_user"][$i] ?>"  class="btn btn-success">Show</a></td>
+            <td><a href="user.php?ac=de&idu=<?= $res["id_user"][$i] ?>" class="btn btn-danger">Delete</a></td>
             <td></td>
             </tr>
         <?php }?>

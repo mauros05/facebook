@@ -23,7 +23,7 @@
     <?php for($i = 0; $i < count($res["user_id"]); $i++){ ?>
         <div class="card w-75 mb-3">
             <div class="card-body">
-              <h5 class="card-title"><?= $res["user_name"][$i] ?></h5>
+              <h5 class="card-title"><a href="user.php?ac=s&idu=<?= $res["user_id"][$i] ?>"><?= $res["user_name"][$i] ?></a></h5>
               <p class="card-text"><?= $res["text"][$i] ?></p>
               <a href="post.php?ac=edit&post_id=<?= $res["post_id"][$i] ?>" class="btn btn-primary">Edit Post</a>
               <button class="btn btn-danger delete-post-button" data-id="<?= $res["post_id"][$i] ?>">Delte Post</button>

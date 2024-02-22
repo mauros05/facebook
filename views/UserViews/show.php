@@ -10,7 +10,7 @@
             <p class="text-muted mb-1"><?= $res["username"] ?></p>
             <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
             <div class="d-flex justify-content-center mb-2">
-              <a href="index.php?ac=e&idu=<?= $res["id_user"]?>" class="btn btn-primary">Edit Profile</a>
+              <a href="user.php?ac=e&idu=<?= $res["id_user"]?>" class="btn btn-primary">Edit Profile</a>
             </div>
           </div>
         </div>

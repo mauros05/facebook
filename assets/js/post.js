@@ -57,14 +57,14 @@ $(document).ready(function(){
         
         let postId = $(this).data("id");
         $("#modal-message").html("Are you sure you want to delete this post?");
-        $("#modal-button").html(`<button type='button' class='btn btn-secondary' id='delete-button-final${postId}'>Delete</button>`);
+        $("#modal-button").html(`<button type='button' class='btn btn-danger' id='delete-button-final${postId}'>Delete</button>`);
         $("#staticBackdrop").modal("show");
         
         $("#delete-button-final"+postId).click(function(event){
            let postDeleteId =  $("#post-"+postId).val();
            obj.data = { postId: postDeleteId,
                         action: "delete" };
-           obj.url = "post.php";
+           obj.url  = "post.php";
            obj.type = "POST";
 
            let res = ajaxPetition(obj);
@@ -78,5 +78,5 @@ $(document).ready(function(){
             }
         })
     })
-    
+
 })

@@ -11,7 +11,8 @@ class PostModel{
         $query = "SELECT p.user_id,
                          p.text,
                          p.post_id,
-                         u.user_name 
+                         p.user_id,
+                         u.user_name
                   FROM posts p 
                   INNER JOIN users u 
                   ON u.id_user = p.user_id

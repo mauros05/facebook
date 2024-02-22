@@ -25,7 +25,7 @@ $(document).ready(function(){
                         emailOrusername: emailOrusername, 
                         password: pass
                     };
-            obj.url  = "login.php";
+            obj.url  = "index.php";
             obj.type = "POST";
 
             let res = ajaxPetition(obj);
